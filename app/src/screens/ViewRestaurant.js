@@ -12,7 +12,7 @@ export default function ViewRestaurant({ route }) {
       <View>
         <TouchableHighlight
           style={styles.viewRestaurant}
-          onPress={() => navigation.navigate('homePage')} // Navegue para a tela do restaurante
+          onPress={() => navigation.navigate('restaurantList')} // Navegue para a tela do restaurante
         >
           <Text style={styles.viewRestaurantText}>Ver restaurante</Text>
         </TouchableHighlight>

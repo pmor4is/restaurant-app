@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, StyleSheet, Text } from 'react-native';
 
-import HomeScreen from './src/screens/HomeScreen';
+import RestaurantList from './src/screens/RestaurantList';
 import { RestaurantsProvider } from './src/context/RestaurantContext';
 import ViewRestaurant from './src/screens/ViewRestaurant';
 import CreateRestaurant from './src/screens/CreateRestaurant';
@@ -32,8 +32,8 @@ export default function App() {
           }}
         >
           <Stack.Screen 
-            name='homePage' 
-            component={HomeScreen} 
+            name='restaurantList' 
+            component={RestaurantList} 
             options={{ title: 'Home' }} 
           />
           <Stack.Screen 

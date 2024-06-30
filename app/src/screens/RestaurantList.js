@@ -25,7 +25,7 @@ const restaurants = [
   },
 ];
 
-export default function HomeScreen() {
+export default function RestaurantList() {
   return (
     <View style={styles.container}>
       {/* <Header label="Food Central" /> */}
