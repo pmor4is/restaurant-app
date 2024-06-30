@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginRight: 10,
         alignItems: 'center',
-
     },
     labelStyle: {
         fontSize: 12,

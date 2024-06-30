@@ -1,25 +1,29 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, TouchableHighlight } from 'react-native';
-import IconLabel from './IconLabel';
+import { View, Text, StyleSheet, Dimensions, TouchableHighlight } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function RestaurantCard({ info }) {
-    const { name, categories, deliveryTime, distance, image } = info;
+    const navigation = useNavigation();
+    const { name, categories, address } = info;
 
     return (
         <View style={styles.container}>
             <View style={styles.cardContainer}>
-                {/* <Image style={styles.imageStyle} source={image} /> */}
                 <View style={styles.infoStyle}>
                     <Text style={styles.titleStyle}>{name}</Text>
                     <Text style={styles.categoryStyle}>{categories}</Text>
 
                     <View style={styles.iconLabelStyle}>
                         <FontAwesomeIcon icon={faLocationDot} color='#85A16D' />
-                        <Text style={styles.labelStyle}>{deliveryTime}</Text>
+                        <Text style={styles.labelStyle}>{address}</Text>
                     </View>
-                    <TouchableHighlight style={styles.viewRestaurant}>
+
+                    <TouchableHighlight 
+                        style={styles.viewRestaurant}
+                        onPress={() => navigation.navigate('viewRestaurant', { info })} // Navegue para a tela do restaurante
+                    >
                         <Text style={styles.viewRestaurantText}>Ver restaurante</Text>
                     </TouchableHighlight>
                 </View>
@@ -82,7 +86,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     viewRestaurantText: {
-        color: '#FFF', // Cor do texto "Ver restaurante"
+        color: '#FFF', 
         textAlign: 'center',
     }
 });

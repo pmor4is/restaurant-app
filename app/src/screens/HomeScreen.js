@@ -6,52 +6,29 @@ import Card from '../components/RestaurantCard';
 
 const restaurants = [
   {
-    name: 'The Muffin Man Bakery',
-    categories: 'Desserts, Cakes and Bakery',
-    deliveryTime: '35 min',
-    distance: '3.7 km',
-    image: require('../../assets/the-muffin-man-bakery.jpg'),
+    name: 'voley',
+    categories: 'lanche pizza',
+    address: 'rua mato grosso 384',
     id: 1,
   },
   {
-    name: 'Central Perk Coffee House',
-    categories: 'Beverages, Desserts, Cakes and Bakery',
-    deliveryTime: '45 min',
-    distance: '4.3 km',
-    image: require('../../assets/central-perk.jpg'),
+    name: 'glutton',
+    categories: 'pipipi popopo',
+    address: 'rua nao sei',
     id: 2,
   },
   {
-    name: 'WildBread Bakery',
-    categories: 'Cakes and Bakery, American, Sandwiches, Burgers',
-    deliveryTime: '25 min',
-    distance: '3 km',
-    image: require('../../assets/wildbread-bakery.jpg'),
+    name: 'indy',
+    categories: 'cigarro e cachaça',
+    address: 'rua dos bobo n0',
     id: 3,
-  },
-  {
-    name: "McDonald's",
-    categories: 'Fast Food, Burgers, Desserts',
-    deliveryTime: '20 min',
-    distance: '2.5 km',
-    image: require('../../assets/mcdo.jpg'),
-    id: 4,
-  },
-  {
-    name: 'Jollibee',
-    categories: 'Fast Food, Burgers, Desserts',
-    deliveryTime: '25 min',
-    distance: '3.1 km',
-    image: require('../../assets/jollibee.jpg'),
-    id: 5,
   },
 ];
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Header label="Food Central" />
-      {/* <Card /> */}
+      {/* <Header label="Food Central" /> */}
       <StatusBar barStyle="dark-content" />
 
       <FlatList
@@ -71,6 +48,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
-    // justifyContent: 'center',
   },
 });
