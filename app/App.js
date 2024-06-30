@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, StyleSheet, Text } from 'react-native';
 
 import RestaurantList from './src/screens/RestaurantList';
-import { RestaurantsProvider } from './src/context/RestaurantContext';
 import ViewRestaurant from './src/screens/ViewRestaurant';
 import CreateRestaurant from './src/screens/CreateRestaurant';
+import HomePage from './src/screens/HomePage';
+
+import { RestaurantsProvider } from './src/context/RestaurantContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,9 +33,14 @@ export default function App() {
           }}
         >
           <Stack.Screen 
+            name='homePage' 
+            component={HomePage} 
+            options={{ title: 'Homepage' }} 
+          />
+          <Stack.Screen 
             name='restaurantList' 
             component={RestaurantList} 
-            options={{ title: 'Home' }} 
+            options={{ title: 'Lista de restaurantes' }} 
           />
           <Stack.Screen 
             name='viewRestaurant' 
