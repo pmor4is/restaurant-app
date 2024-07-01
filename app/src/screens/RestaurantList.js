@@ -1,31 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, StatusBar, FlatList } from 'react-native';
-
-import Header from '../components/Header';
 import Card from '../components/RestaurantCard';
 
-const restaurants = [
-  {
-    name: 'voley',
-    categories: 'lanche pizza',
-    address: 'rua mato grosso 384',
-    id: 1,
-  },
-  {
-    name: 'glutton',
-    categories: 'pipipi popopo',
-    address: 'rua nao sei',
-    id: 2,
-  },
-  {
-    name: 'indy',
-    categories: 'cigarro e cachaça',
-    address: 'rua dos bobo n0',
-    id: 3,
-  },
-];
+import axios from 'axios';
+
 
 export default function RestaurantList() {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    const fetchRestaurants = async () => {
+      try {
+        const response = await axios.get('https://restaurant-app-server-eta.vercel.app/restaurants'); // Replace with your API endpoint
+        setRestaurants(response.data);
+      } catch (error) {
+        console.error('Error fetching restaurants:', error);
+      }
+    };
+
+    fetchRestaurants();
+  }, []);
+
   return (
     <View style={styles.container}>
       {/* <Header label="Food Central" /> */}
